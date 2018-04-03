@@ -11,7 +11,7 @@ public class EcpApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(EcpApplication.class, args);
-		 
+		
 		User[] usersOld = new User[3];
 		User user1Old = new User();
 		user1Old.setUserID("U1");
