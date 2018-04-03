@@ -1,0 +1,47 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.9.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+group = 'com.ecp'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	//compile('org.springframework.boot:spring-boot-starter-cache')
+	//compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	//compile('org.springframework.boot:spring-boot-starter-data-mongodb')
+	compile('org.springframework.boot:spring-boot-starter-data-neo4j')
+	//compile('org.springframework.boot:spring-boot-starter-data-redis')
+	compile('org.springframework.boot:spring-boot-starter-freemarker')
+	//compile('org.springframework.boot:spring-boot-starter-jdbc')
+	//compile('org.springframework.session:spring-session')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	runtime('org.springframework.boot:spring-boot-devtools')
+	compileOnly('org.projectlombok:lombok')
+	//compile('org.springframework.boot:spring-boot-starter-quartz')
+	compile('org.springframework.kafka:spring-kafka')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	// https://mvnrepository.com/artifact/org.quartz-scheduler/quartz
+	compile group: 'org.quartz-scheduler', name: 'quartz', version: '2.3.0'
+	// https://mvnrepository.com/artifact/org.quartz-scheduler/quartz-jobs
+compile group: 'org.quartz-scheduler', name: 'quartz-jobs', version: '2.3.0'
+compile group: 'org.springframework', name: 'spring-context', version: '5.0.4.RELEASE'
+	compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.21'
+}
